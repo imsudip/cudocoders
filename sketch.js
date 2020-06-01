@@ -17,7 +17,7 @@ function setup() {
   // noStroke();
   // text('train', 100, 200);
 
-  var points = font.textToPoints("Helllo World,I'm Sudip", 0, height / 2, 110, {
+  var points = font.textToPoints("Hello World,I'm Sudip", 0, height / 2, 110, {
     sampleFactor: 0.65
   });
   document.getElementById("customText").addEventListener("change", changeText);
