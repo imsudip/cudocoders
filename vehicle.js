@@ -10,15 +10,17 @@ function Vehicle(x, y) {
   this.maxforce = 1;
 }
 
-Vehicle.prototype.behaviors = function() {
+Vehicle.prototype.behaviors = function(b) {
   var arrive = this.arrive(this.target);
   var mouse = createVector(mouseX, mouseY);
   var flee = this.flee(mouse);
 
   arrive.mult(1);
   flee.mult(5);
-
+if(b==true){
   this.applyForce(arrive);
+}
+  
   this.applyForce(flee);
 };
 

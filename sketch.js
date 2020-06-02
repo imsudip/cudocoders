@@ -1,7 +1,7 @@
 
 var font;
 var vehicles = [];
-
+var destroy=true;
 function preload() {
   font = loadFont('AvenirNextLTPro-Demi.otf');
 }
@@ -21,6 +21,7 @@ function setup() {
     sampleFactor: 0.65
   });
   document.getElementById("customText").addEventListener("change", changeText);
+  document.getElementById("changeButton").addEventListener("click", toggleMode);
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
     var vehicle = new Vehicle(pt.x, pt.y);
@@ -29,6 +30,16 @@ function setup() {
     // strokeWeight(8);
     // point(pt.x, pt.y);
   }
+}
+function toggleMode(){
+  var btn= document.getElementById("changeButton");
+  if(destroy==true){
+    btn.innerHTML="back to normal Mode";
+  }else{
+    btn.innerHTML="change to destroyer mode";
+  }
+  
+  destroy=!destroy;
 }
 function changeText() {
   var input = document.getElementById("customText").value;
@@ -50,7 +61,8 @@ function draw() {
   background(26, 32, 44);
   for (var i = 0; i < vehicles.length; i++) {
     var v = vehicles[i];
-    v.behaviors();
+
+    v.behaviors(destroy);
     v.update();
     v.show();
   }
