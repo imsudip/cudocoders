@@ -8,7 +8,7 @@ function preload() {
 
 function setup() {
 
-  let myCanvas = createCanvas(windowWidth, 300);
+  let myCanvas = createCanvas(windowWidth-100, 300);
   myCanvas.parent("container1");
   background(26, 32, 44);
   // textFont(font);
