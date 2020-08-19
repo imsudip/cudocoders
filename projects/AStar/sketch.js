@@ -77,7 +77,7 @@ function resetSketch() {
   openSet.push(start);
 }
 function setup() {
-  var canvas = createCanvas(windowWidth - 50, windowHeight - 50);
+  var canvas = createCanvas(windowWidth - 50, windowHeight - 100);
   canvas.parent("p5Container")
 
   cols = floor(width / w);

@@ -8,7 +8,7 @@ function preload() {
 
 function setup() {
 
-  let myCanvas = createCanvas(windowWidth-100, 300);
+  let myCanvas = createCanvas(600, 150);
   myCanvas.parent("container1");
   background(26, 32, 44);
   // textFont(font);
@@ -17,11 +17,11 @@ function setup() {
   // noStroke();
   // text('train', 100, 200);
 
-  var points = font.textToPoints("Hello World,I'm Sudip", 0, height / 2, 110, {
+  var points = font.textToPoints("I'm Sudip", 0, height *0.7, 110, {
     sampleFactor: 0.65
   });
-  document.getElementById("customText").addEventListener("change", changeText);
-  document.getElementById("changeButton").addEventListener("click", toggleMode);
+  // document.getElementById("customText").addEventListener("change", changeText);
+  // document.getElementById("changeButton").addEventListener("click", toggleMode);
   for (var i = 0; i < points.length; i++) {
     var pt = points[i];
     var vehicle = new Vehicle(pt.x, pt.y);
